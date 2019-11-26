@@ -1,10 +1,222 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}这是主页，一个神奇的网站{% endblock title %}
+{% block nav %}
+    <div class="nav">
+        <div class="menu">
+            <ul class="fl w1200">
 
-</body>
-</html>
+                <li class="active"><i></i>
+
+                    <a href="/index" class="">
+
+                        首页
+
+
+                    </a>
+
+                </li>
+
+
+                <li class=""><i></i>
+
+                    <a href="https://weixinqun.com/group">
+
+                        微信群
+
+
+                        <i class="icon-down"></i>
+                    </a>
+
+
+                    <div style="z-index: 999; display: none;">
+                        <a href="/group">微信群大全</a>
+                        <a href="/group?t=56">创业群</a>
+                        <a href="/group?t=58">辣妈群</a>
+                        <a href="/group?t=39">互粉群</a>
+                        <!-- <a href="/ad_group">微信福利群</a> -->
+                        <a href="/ad_group?t=82">微信红包群</a>
+                        <!-- <a href="/group?t=68" target="_blank">麻将群</a> -->
+                        <a href="http://www.weixin3.com/" target="_blank">小程序发布</a>
+                        <!-- <a href="http://www.weixinhongbao.com/" target="_blank">微信红包网</a> -->
+
+                    </div>
+                </li>
+
+
+                <li class=""><i></i>
+
+                    <a href="/city" class="">
+
+                        地区微信
+
+
+                    </a>
+
+                </li>
+
+
+                <li class=""><i></i>
+
+                    <a href="/personal" class="">
+
+                        个人微信
+
+
+                        <i class="icon-down"></i>
+                    </a>
+
+
+                    <div style="z-index: 999; display: none;">
+                        <a href="/personal">微信大全</a>
+                        <a href="/personal?t=1">微商微信</a>
+                        <a href="/personal?t=52">模特微信</a>
+                        <a href="/personal?t=70">交友微信</a>
+                        <a href="/personal?t=16">宝妈微信</a>
+                        <a href="/personal?t=14">女性微信</a>
+                        <a href="/personal?t=17">吃货微信</a>
+
+                    </div>
+                </li>
+
+
+                <li class=""><i></i>
+
+                    <a href="/openid" class="">
+
+                        微信公众号
+
+
+                        <i class="icon-down"></i>
+                    </a>
+
+
+                    <div style="z-index: 999; display: none;">
+                        <a href="/openid">公众号大全</a>
+                        <a href="/openid?t=1">微商公众号</a>
+                        <a href="/openid?t=27">搞笑公众号</a>
+                        <a href="/openid?t=21">教育公众号</a>
+                        <a href="/openid?t=83">兼职公众号</a>
+                        <a href="/openid?t=5">娱乐公众号</a>
+                        <a href="/openid?t=32">营销公众号</a>
+                        <a href="/openid?t=47">电商公众号</a>
+
+                    </div>
+                </li>
+
+
+                <li class=""><i></i>
+
+                    <a href="/product" class="hot_menu">
+
+                        微信货源
+
+
+                        <i class="icon-down"></i>
+                    </a>
+
+
+                    <div style="z-index: 999; display: none;">
+                        <a href="/product">优质货源</a>
+                        <a href="/product?new=1">微商货源</a>
+                        <a href="/product?new=1&amp;t=11">微分销平台</a>
+
+                    </div>
+                </li>
+
+
+                <li class=""><i></i>
+
+                    <a href="/article" class="">
+
+                        微信文章
+
+
+                    </a>
+
+                </li>
+
+
+                <li class=""><i></i>
+
+                    <a href="/circle" class="">
+
+                        搞笑大全
+
+
+                        <i class="icon-down"></i>
+                    </a>
+
+
+                    <div style="z-index: 999; display: none;">
+                        <a href="/circle?t=txt">搞笑段子</a>
+                        <a href="/circle?t=pic">搞笑图片</a>
+
+                    </div>
+                </li>
+
+
+                <li class=""><i></i>
+
+                    <a href="/list" class="">
+
+                        排行榜
+
+
+                        <i class="icon-down"></i>
+                    </a>
+
+
+                    <div style="z-index: 999; display: none;">
+                        <a href="/group?tt=w&amp;m=2&amp;o=read">微信群排行</a>
+                        <a href="/openid?tt=w&amp;m=2&amp;o=read">公众号排行</a>
+                        <a href="/personal?tt=w&amp;m=2&amp;o=read">微信号排行</a>
+
+                    </div>
+                </li>
+
+
+                <li class=""><i></i>
+
+                    <a href="/ad_group" class="">
+
+                        红群
+
+
+                    </a>
+
+                </li>
+
+
+                <li class=""><i></i>
+
+                    <a href="/sell" class="">
+
+                        群交易
+
+
+                    </a>
+
+                </li>
+
+
+                <li class="Release" style="float:right;">
+                    <span class="fl weixinqunICON wxICON_4"></span>
+                    {% if request.user.username %}
+
+                        <a href="/info/" id="add_group" class="top_login diag">发布微信群</a>
+                    {% else %}
+                        <a href="/login/" id="add_group" class="top_login diag">发布微信群</a>
+
+                    {% endif %}
+                    <!-- <a href="/user_center/group" class="diag" id="add_group">发布微信群</a> -->
+
+                    <span class="fr weixinqunICON wxICON_5"> </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+{% endblock nav %}

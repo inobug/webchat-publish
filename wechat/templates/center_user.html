@@ -1,0 +1,933 @@
+{% extends 'base.html' %}
+{% block title %}这是个人中心，一个神奇的网站{% endblock title %}
+{% block link %}
+    <link rel="stylesheet" href="/static/css/blue.css"/>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/table_form.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/center.css">
+    <script type="text/javascript" src="/static/js/jquery.form.js"></script>
+    <script type="text/javascript" src="/static/js/common.js"></script>
+    <script type="text/javascript" src="/static/js/form.js"></script>
+    <script type="text/javascript" src="/static/js/formvalidator.js"></script>
+    <script type="text/javascript" src="/static/js/formvalidatorregex.js"></script>
+{% endblock link %}
+{% block nav %}
+    <div class="nav center_nav">
+        <div class="menu">
+            <ul class="fl w1200">
+                <li class="active">
+                    <i class="infoICON wxICON_user"> </i><a href="/info/">个人中心</a>
+                </li>
+                <li>
+                    <a href="/index/">网站首页</a>
+                </li>
+                <!-- <li>
+                                    <a href="/hong888">微信红包首页</a>
+                                </li> -->
+                <li>
+                    <a href="/user_center/change_info">基本资料</a>
+                </li>
+                <li>
+                    <a href="/user_center/notice">会员公告</a>
+                </li>
+                <li class="Release" style="float:right;">
+                    <span class="fl weixinqunICON wxICON_4"> </span>
+                    <a href="/user_center/group">发布微信群</a>
+                    <span class="fr weixinqunICON wxICON_5"> </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock nav %}
+{% block center %}
+    <div class="w1200 clearfix pt20">
+        <div class="centerNav">
+
+            <div class="centerAvatar">
+
+                <div class="row">
+
+                    <div class="avatar">
+
+                        <a href="#" title="头像">
+
+                            <img src="/static/images/logo.jpg" alt="头像">
+
+                        </a>
+
+                    </div>
+
+                    <div class="myInfo">
+
+                        <p class="name ellips mt20">m1574731811</p>
+
+
+                        <p class="integral">等级:<span class=" Pink">VIP.0</span></p>
+
+                    </div>
+
+                </div>
+
+                <div class="row pt10">
+
+                    <div class="rgstion" style=" text-align:center">
+
+                        <a href="/user_center/info" class="btn_orange" title="签到">返回个人中心</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="centerMenu">
+
+                <ul>
+
+
+                    <li class="item ">
+
+                        <div class="menu_bg">
+
+                            <span class="centerICON icon_1"></span>
+
+                            <a href="/user_center/group" class="link">微信群发布
+
+
+                                <i class="hot centerICON icon_5"></i>
+
+
+                            </a>
+
+                        </div>
+
+                    </li>
+
+
+                    <li class="item ">
+
+                        <div class="menu_bg">
+
+                            <span class="centerICON icon_1"></span>
+
+                            <a href="/user_center/sell" class="link">出售群发布
+
+
+                                <i class="hot centerICON icon_5"></i>
+
+
+                            </a>
+
+                        </div>
+
+                    </li>
+
+
+                    <li class="item ">
+
+                        <div class="menu_bg">
+
+                            <span class="centerICON icon_1"></span>
+
+                            <a href="/user_center/personal" class="link">个人微信号发布
+
+
+                                <i class="hot centerICON icon_5"></i>
+
+
+                            </a>
+
+                        </div>
+
+                    </li>
+
+
+                    <li class="item ">
+
+                        <div class="menu_bg">
+
+                            <span class="centerICON icon_1"></span>
+
+                            <a href="/user_center/openid" class="link">公众号发布
+
+
+                                <i class="hot centerICON icon_5"></i>
+
+
+                            </a>
+
+                        </div>
+
+                    </li>
+
+
+                    <li class="item ">
+
+                        <div class="menu_bg">
+
+                            <span class="centerICON icon_1"></span>
+
+                            <a href="/user_center/product" class="link">货源发布
+
+
+                                <i class="hot centerICON icon_5"></i>
+
+
+                            </a>
+
+                        </div>
+
+                    </li>
+
+
+                    <li class="item ">
+
+                        <span class="centerICON icon_1"></span><a href="#" class="link">个人投稿</a>
+
+                        <ul class="clearfix sub_item_ul">
+
+
+                            <li class="sub_item ">
+
+                                <div class="menu_bg">
+
+                                    <a href="/user_center/article">发布文章
+
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+                            <li class="sub_item ">
+
+                                <div class="menu_bg">
+
+                                    <a href="/user_center/joy_pic">发布搞笑图片
+
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+                            <li class="sub_item ">
+
+                                <div class="menu_bg">
+
+                                    <a href="/user_center/joy_txt">发布搞笑段子
+
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+                            <li class="sub_item ">
+
+                                <div class="menu_bg">
+
+                                    <a href="/user_center/ads">发布广告
+
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+                        </ul>
+
+                    </li>
+
+
+                    <li class="item ">
+
+                        <span class="centerICON icon_1"></span><a href="#" class="link">消费与金币</a>
+
+                        <ul class="clearfix sub_item_ul">
+
+
+                            <li class="sub_item ">
+
+                                <div class="menu_bg">
+
+                                    <a href="/user_center/recharge">我要充值
+
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+                            <li class="sub_item ">
+
+                                <div class="menu_bg">
+
+                                    <a href="/user_center/recharge_log">充值记录
+
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+                            <li class="sub_item ">
+
+                                <div class="menu_bg">
+
+                                    <a href="/user_center/consume_log">消费明细
+
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+                            <li class="sub_item ">
+
+                                <div class="menu_bg">
+
+                                    <a href="/user_center/point_explain">金币规则
+
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+                            <li class="sub_item ">
+
+                                <div class="menu_bg">
+
+                                    <a href="/user_center/point_log">金币查询
+
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+                            <li class="sub_item ">
+
+                                <div class="menu_bg">
+
+                                    <a href="/user_center/trans">代理转账
+
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+                        </ul>
+
+                    </li>
+
+
+                    <li class="item ">
+
+                        <span class="centerICON icon_1"></span><a href="#" class="link">会员中心</a>
+
+                        <ul class="clearfix sub_item_ul">
+
+
+                            <li class="sub_item active">
+
+                                <div class="menu_bg">
+
+                                    <a href="/user_center/info">个人中心
+
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+                            <li class="sub_item ">
+
+                                <div class="menu_bg">
+
+                                    <a href="/user_center/change_info">修改资料
+
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+                            <li class="sub_item ">
+
+                                <div class="menu_bg">
+
+                                    <a href="/user_center/bound_phone">绑定手机号
+
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+                            <li class="sub_item ">
+
+                                <div class="menu_bg">
+
+                                    <a href="/user_center/notice">会员公告
+
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+                            <li class="sub_item ">
+
+                                <div class="menu_bg">
+
+                                    <a href="/user_center/share">邀请注册
+
+
+                                    </a>
+
+                                </div>
+
+                            </li>
+
+
+                        </ul>
+
+                    </li>
+
+
+                    <li class="item ">
+
+                        <div class="menu_bg">
+
+                            <span class="centerICON icon_1"></span>
+
+                            <a href="/user_center/logout" class="link">退出
+
+
+                            </a>
+
+                        </div>
+
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </div>
+        <div class="centerContent centerContent_index">
+
+
+            <div class="centerExp"
+                 style=" width: 97%; border-bottom:1px solid #c2c2c2; font-size:18px;    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);">
+
+                <span class="ml20">欢迎您，<span
+                        class="Pink">{{ request.user.username }}</span>！ 您上次登录时间是：{{ request.user.last_login|date:"Y年m月d日" }}</span>
+
+                <span class="exp_tip">
+            金币：20个
+						<a href="#" class=" btn_pink mr5 duihuan">兑换</a>
+
+
+						余额：0.00元
+            <a href="/user_center/recharge" class=" btn_pink mr5">充值</a>
+			<a href="#" class=" btn_green mr5 duihuan">
+                            转账
+                        </a>
+        </span>
+
+            </div>
+
+
+            <div class="centerExp mt20" style="padding-bottom:40px; padding-top:0px;">
+
+
+                <div style="border-bottom:1px solid #ff3265; padding-left:10px; line-height:80px; height:80px;">
+
+                    <span class="f20" style="font-weight:200">用户ID：{{ request.user.pk }}，您当前的等级值：</span>
+
+                    <div class="exp_box"><span class="exp_num" style="width: 22px"></span>
+
+                        <em class="exp_txt">等级值:20/200</em></div>
+
+                    <span class="exp_tip"><a href="/user_center/task" class="Pink">»会员级别说明</a></span>
+
+                </div>
+
+
+                <div class="centerStep">
+
+                    <div class="st">做任务领金币</div>
+
+                    <ul>
+
+                        <span class="line"></span>
+
+                        <li style="width:80px;" class="ml10">
+
+                            <p>签到15积分</p>
+
+                            <p><span class="infoICON inIcon_1" style="background-position: -40px 0px;"></span></p>
+
+                            <a href="javascript:;" class="task_btn" id="user_sign">领金币</a>
+
+                            <p class="registration">您已成功签到，并增加了15个金币！</p>
+
+                        </li>
+
+                        <li>
+
+                            <p>微信登录</p>
+
+                            <p><span class="infoICON inIcon_2"></span></p>
+
+                            <span>奖励20金币</span>
+
+                        </li>
+
+                        <li>
+
+                            <p>关注公众号</p>
+
+                            <p><span class="infoICON inIcon_3"></span></p>
+
+                            <span></span>
+
+                        </li>
+
+                        <li>
+
+                            <p><a href="/user_center/share">邀请注册</a></p>
+
+                            <p><span class="infoICON inIcon_4"></span></p>
+
+                            <span>奖励30金币</span>
+
+                        </li>
+
+                        <li>
+
+                            <p>分享内容</p>
+
+                            <p><span class="infoICON inIcon_1"></span></p>
+
+                            <span>奖励16金币</span>
+
+                        </li>
+
+                        <li>
+
+                            <p>点赞</p>
+
+                            <p><span class="infoICON inIcon_1"></span></p>
+
+                            <span>奖励不限</span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <div class="colNav">
+
+                <ul>
+
+                    <li>
+
+                        <a href="/user_center/group"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">微信群管理</p>
+
+                        <a href="/user_center/group?log=1"><p><span class="infoICON inIcon_5"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/group?log=1"><em>0</em></a>条</p>
+
+                    </li>
+
+                    <li>
+
+                        <a href="/user_center/openid"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">公众号管理</p>
+
+                        <a href="/user_center/openid?log=1"><p><span class="infoICON inIcon_7"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/openid?log=1"><em>0</em></a>条</p>
+
+                    </li>
+
+                    <li>
+
+                        <a href="/user_center/personal"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">个人微信号管理</p>
+
+                        <a href="/user_center/personal?log=1"><p><span class="infoICON inIcon_8"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/personal?log=1"><em>0</em></a>条</p>
+
+                    </li>
+
+                    <li>
+
+                        <a href="/user_center/product"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">微商货源管理</p>
+
+                        <a href="/user_center/product?log=1"><p><span class="infoICON inIcon_9"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/product ?log=1"><em>0</em></a>条</p>
+
+                    </li>
+                    <li>
+
+                        <a href="/user_center/sell"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">微信群交易管理</p>
+
+                        <a href="/user_center/sell?log=1"><p><span class="infoICON inIcon_5"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/sell?log=1"><em>0</em></a>条</p>
+
+                    </li>
+
+                    <!--<li>
+
+                        <a href="/user_center/article"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">文章管理</p>
+
+                        <a href="/user_center/article?log=1"><p><span class="infoICON inIcon_10"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/article ?log=1"><em>0</em></a>条</p>
+
+                    </li>
+
+                    <li>
+
+                        <a href="/user_center/joy_pic"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">搞笑图片管理</p>
+
+                        <a href="/user_center/joy_pic?log=1"><p><span class="infoICON inIcon_11"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/joy_pic ?log=1"><em>0</em></a>条</p>
+
+                    </li>
+
+                    <li>
+
+                        <a href="/user_center/joy_txt"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">搞笑段子管理</p>
+
+                        <a href="/user_center/joy_txt?log=1"><p><span class="infoICON inIcon_12"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/joy_txt ?log=1"><em>0</em></a>条</p>
+
+                    </li>-->
+
+                    <li>
+
+                        <a href="/user_center/ads"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">发布广告</p>
+
+                        <a href="/user_center/ads"><p><span class="infoICON inIcon_5"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/ads?log=1"><em>0</em></a>条</p>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+        <div class="rel_box rel_box_login" style=" margin-top:20px;">
+            <div class="inner">
+                <h4>
+                    兑换
+                    <span class="fr closeBox" style="cursor:pointer;">
+                <img src="/images/close_02.png" alt="关闭">
+            </span>
+                </h4>
+                <div class="code_box">
+                    <div class="mid_cen" style="text-align:left">
+                        <div> 账户余额：<span class="Pink">0.00</span>元</div>
+                        <div class="pt10">
+                            <input value="1" class="input" type="text" style="width:80px;" id="exchange_rmb">
+                            元 = <span class="Pink" id="exchange_gold">5</span> 金币
+                            <a href="javascript:;" class="ml20 btn_green" id="exchange_now">兑换</a>
+                        </div>
+
+                    </div>
+                    <!-- <div class="sure">
+                        <p style="text-align:center">
+                            <a href="" class=" btn_orange">
+                                确定
+                            </a>
+                            <a href="" class=" btn_orange  ml10">
+                                取消
+                            </a>
+                        </p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="rel_box rel_box_login  trans-box" style=" margin-top:20px;">
+            <div class="inner">
+                <input type="hidden" name="_xsrf" value="2|ea25e3a1|e39a198de1e87c6ad293c6d03fcd288a|1574752203">
+                <h4>
+                    用户余额转账
+                    <span class="fr closeBox" style="cursor:pointer;">
+                        <img src="/images/close_02.png" alt="关闭">
+                    </span>
+                </h4>
+                <div class="code_box">
+                    <div class="mid_cen" style="text-align:left">
+                        <div><span class="pay_lable">当前余额：</span><span class="Pink">0.00</span>元 <a
+                                href="/user_center/trans?log=1" class="caaa ml20" style="font-size:12px;">交易记录</a></div>
+                        <div class="pt10">
+                            <span class="pay_lable">转账用户ID：</span><input class="input" type="text" style="width:130px;"
+                                                                         name="to_id"> <span class="caaa"
+                                                                                             style="font-size:12px;">请准确核对转账用户ID,勿输错！</span>
+
+                        </div>
+                        <div class="pt10">
+                            <span class="pay_lable">转账金额：</span><input class="input" type="text" style="width:130px;"
+                                                                       name="money"> <span class="caaa"
+                                                                                           style="font-size:12px;">转账金额不低于10元</span>
+                        </div>
+
+                    </div>
+                    <div class="sure">
+
+                        <p style="text-align:center">
+                            <a href="javascript:void(0);" class=" btn_orange trans-btn">
+                                确定
+                            </a>
+                            <a href="javascript:void(0);" class=" btn_orange  ml10">
+                                取消
+                            </a>
+                        </p></div>
+                </div>
+            </div>
+        </div>
+        <div class="blacklayout">
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var _w = $(document).width();
+                var _h = $(document).height();
+                //				var s = '<p class="mt10"><input type="text" class="ipt"  /></p>//	';
+                //			console.log(_w);
+                var _w = $(document).width();
+                var _h = $(document).height();
+                //				var s = '<p class="mt10"><input type="text" class="ipt"  /></p>//	';
+                //			console.log(_w);
+                $('.duihuan').click(function () {
+                    var i = $(this).index('.duihuan');
+                    //				console.log(i);
+                    black();
+                    if (i > 1) {
+                        i = 1
+                    }
+                    ;
+                    $('.rel_box').hide();
+                    $('.rel_box').eq(i).show();
+                    var wid = $('.rel_box').eq(i).width();
+                    var hei = $('.rel_box').eq(i).height();
+                    $('.rel_box').eq(i).css({
+                        position: 'fixed',
+                        top: ($(window).height() - hei) / 2,
+                        left: (_w - wid) / 2
+                    });
+                    $('.closeBox').click(function () {
+                        $('.rel_box').hide();
+                        $('.blacklayout').hide();
+                    });
+                });
+
+                function black() {
+                    $('.blacklayout').show();
+                    $('.blacklayout').css({
+                        position: 'absolute',
+                        width: _w,
+                        height: _h,
+                        'z-index': 50,
+                        'background': '#000',
+                        opacity: 0.5,
+                        top: 0,
+                        left: 0
+                    });
+                }
+
+                $(".laqun a").click(function () {
+                    $("#dv").slideToggle(50);
+                    setTimeout(function () {
+                        $("#dv").hide(200);
+                    }, 1000);
+                });
+
+            })
+        </script>
+        <script type="text/javascript">
+            $('#user_sign').click(function () {
+                if ($(this).attr('class') == 'task_btn') {
+                    $.ajax({
+                        url: '/ajax/sign',
+                        dataType: 'json',
+                        success: function (data) {
+                            if (data == 1) {
+                                setCookie('user_sign', 1, 12);
+                                $('#user_sign').addClass('active');
+                                $('#user_sign').html('已领');
+                                $('#user_sign').prev().children().css('background-position', '0 0');
+                                $('#user_sign').next().fadeIn(1000).delay(2000).fadeOut(1000);
+                            } else {
+                                $('#user_sign').addClass('active');
+                                $('#user_sign').html('已领');
+                                $('#user_sign').prev().children().css('background-position', '0 0');
+                                $('#user_sign').next().html('您在8小时内已经签到过！');
+                                $('#user_sign').next().fadeIn(1000).delay(2000).fadeOut(1000);
+                            }
+                        }
+                    });
+                }
+                ;
+                return false;
+            });
+
+            $(function ($) {
+                $.ajax({
+                    url: '/ajax/sign',
+                    data: "c=1",
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data == 1) {
+                            $('#user_sign').attr('class', 'task_btn');
+                            $('#user_sign').html('领金币');
+                            $('#user_sign').prev().children().css('background-position', '-40px 0');
+                        } else {
+                            $('#user_sign').addClass('active');
+                            $('#user_sign').html('已领');
+                        }
+                    }
+                });
+
+                $('#exchange_rmb').keyup(function () {
+                    var r = /^\+?[1-9][0-9]*$/;
+                    if (!r.test($(this).val())) {
+                        alert('请输入正整数！');
+                        $(this).val(1);
+                        $('#exchange_gold').html(5);
+                    } else {
+                        $('#exchange_gold').html($(this).val() * 5);
+                    }
+                });
+
+                $('#exchange_now').click(function () {
+                    var r = /^\+?[1-9][0-9]*$/;
+                    var m = $('#exchange_rmb').val();
+                    if (!r.test(m)) {
+                        alert('请输入正整数！');
+                    } else {
+                        $.ajax({
+                            url: '/ajax/exchange',
+                            data: "m=" + m,
+                            dataType: 'json',
+                            success: function (data) {
+                                if (data == 1) {
+                                    alert('已成功兑换！');
+                                    location.reload();
+                                } else {
+                                    alert('兑换失败！');
+                                    $('#exchange_rmb').val(1);
+                                    $('#exchange_gold').html(5);
+                                }
+                            }
+                        });
+                    }
+                });
+
+                $('.trans-btn').click(function () {
+                    var r = /^\+?[1-9][0-9]*$/;
+                    var money = $('.trans-box input[name="money"]').val();
+                    var to_id = $('.trans-box input[name="to_id"]').val();
+                    if (!r.test(money) || !r.test(to_id)) {
+                        alert('请输入正整数！');
+                    } else {
+                        $.ajax({
+                            url: '/user_center/trans?json=1&_xsrf=' + getCookie('_xsrf'),
+                            data: {'money': money, 'to_id': to_id},
+                            type: 'POST',
+                            dataType: 'json',
+                            success: function (data) {
+                                if (data.error == 200) {
+                                    alert('转账成功！');
+                                    location.reload();
+
+                                } else {
+                                    alert('转账失败:' + data.msg);
+                                }
+                                $('.trans-btn').hide();
+                            }
+                        });
+                        console.log('over');
+                    }
+                });
+            });
+
+            function setCookie(name, value, hours) {
+                var exp = new Date();
+                exp.setTime(exp.getTime() + hours * 60 * 60 * 1000);
+                document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+            };
+            /*function getCookie(name){
+              var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+              if(arr=document.cookie.match(reg))
+                return unescape(arr[2]);
+              else
+                return null;
+            };*/
+        </script>
+    </div>
+{% endblock center %}

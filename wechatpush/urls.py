@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from wechat.view.users import register
+from wechat.view.users import register,login,logout,user_center
+from wechat.view.index import index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', register),
-
+    path('login/', login),
+    path('logout/', logout),
+    path('index/', index),
+    path('info/', user_center),
 
 ]
