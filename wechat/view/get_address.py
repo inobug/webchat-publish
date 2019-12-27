@@ -3,7 +3,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from rest_framework.views import APIView
 from wechat.models import User
 
-CHINA_CIRTY = {'北京': ['北京'],
+china_cirty = {'北京': ['北京'],
                '广东': ['广州', '深圳', '珠海', '汕头', '韶关', '佛山', '江门', '湛江', '茂名', '肇庆', '惠州', '梅州', '汕尾', '河源', '阳江', '清远',
                       '东莞', '中山', '潮州', '揭阳', '云浮'],
                '上海': ['黄浦区', '卢湾区', '徐汇区', '长宁区', '静安区', '普陀区', '闸北区', '虹口区', '杨浦区', '宝山区', '闵行区', '嘉定区', '松江区', '金山区',
@@ -53,8 +53,7 @@ CHINA_CIRTY = {'北京': ['北京'],
                       '宜兰县', '花莲县', '台东县', '澎湖县', '基隆市', '新竹市', '台中市', '嘉义市', '台南市']}
 
 
-def user_info(request):
+def get_address(request):
     if request.method == 'GET':
-        china_cirty = CHINA_CIRTY.keys()
-        print(china_cirty)
-        return render(request, 'user_center/user_info.html', {'request': request, 'china_cirty': china_cirty})
+
+        print(request.get('cirty'))

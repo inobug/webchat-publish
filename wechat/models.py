@@ -14,6 +14,7 @@ class User(AbstractUser):
     phone = models.CharField(null=True, verbose_name='手机号', max_length=200)
     email = models.CharField(null=True, verbose_name='邮箱', max_length=200)
     avatar = models.FileField(upload_to='avatars/', default="avatars/default.png")
+    brithday=models.DateField(null=True,verbose_name='生日')
     create_time = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
     experience=models.IntegerField(default=0)
     level=models.IntegerField(default=0)

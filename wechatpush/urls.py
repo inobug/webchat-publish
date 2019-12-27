@@ -18,6 +18,7 @@ from django.urls import path
 from wechat.view.users import register,login,logout,user_center
 from wechat.view.index import index
 from wechat.view.user_center.user_info import user_info
+from wechat.view.get_address import get_address
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', register),
@@ -26,5 +27,6 @@ urlpatterns = [
     path('index/', index),
     path('info/', user_center),
     path('user_center/user_info/', user_info),
+    path('select/join/', get_address),
 
 ]
