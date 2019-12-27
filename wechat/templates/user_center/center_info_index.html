@@ -1,0 +1,236 @@
+{% extends 'center_user.html' %}
+    {% block center_info %}
+        <div class="centerContent centerContent_index">
+
+
+            <div class="centerExp"
+                 style=" width: 97%; border-bottom:1px solid #c2c2c2; font-size:18px;    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);">
+
+                <span class="ml20">欢迎您，<span
+                        class="Pink">{{ request.user.username }}</span>！ 您上次登录时间是：{{ request.user.last_login|date:"Y年m月d日" }}</span>
+
+                <span class="exp_tip">
+            金币：20个
+						<a href="#" class=" btn_pink mr5 duihuan">兑换</a>
+
+
+						余额：0.00元
+            <a href="/user_center/recharge" class=" btn_pink mr5">充值</a>
+			<a href="#" class=" btn_green mr5 duihuan">
+                            转账
+                        </a>
+        </span>
+
+            </div>
+
+
+            <div class="centerExp mt20" style="padding-bottom:40px; padding-top:0px;">
+
+
+                <div style="border-bottom:1px solid #ff3265; padding-left:10px; line-height:80px; height:80px;">
+
+                    <span class="f20" style="font-weight:200">用户ID：{{ request.user.pk }}，您当前的等级值：</span>
+
+                    <div class="exp_box"><span class="exp_num" style="width: 22px"></span>
+
+                        <em class="exp_txt">等级值:20/200</em></div>
+
+                    <span class="exp_tip"><a href="/user_center/task" class="Pink">»会员级别说明</a></span>
+
+                </div>
+
+
+                <div class="centerStep">
+
+                    <div class="st">做任务领金币</div>
+
+                    <ul>
+
+                        <span class="line"></span>
+
+                        <li style="width:80px;" class="ml10">
+
+                            <p>签到15积分</p>
+
+                            <p><span class="infoICON inIcon_1" style="background-position: -40px 0px;"></span></p>
+
+                            <a href="javascript:;" class="task_btn" id="user_sign">领金币</a>
+
+                            <p class="registration">您已成功签到，并增加了15个金币！</p>
+
+                        </li>
+
+                        <li>
+
+                            <p>微信登录</p>
+
+                            <p><span class="infoICON inIcon_2"></span></p>
+
+                            <span>奖励20金币</span>
+
+                        </li>
+
+                        <li>
+
+                            <p>关注公众号</p>
+
+                            <p><span class="infoICON inIcon_3"></span></p>
+
+                            <span></span>
+
+                        </li>
+
+                        <li>
+
+                            <p><a href="/user_center/share">邀请注册</a></p>
+
+                            <p><span class="infoICON inIcon_4"></span></p>
+
+                            <span>奖励30金币</span>
+
+                        </li>
+
+                        <li>
+
+                            <p>分享内容</p>
+
+                            <p><span class="infoICON inIcon_1"></span></p>
+
+                            <span>奖励16金币</span>
+
+                        </li>
+
+                        <li>
+
+                            <p>点赞</p>
+
+                            <p><span class="infoICON inIcon_1"></span></p>
+
+                            <span>奖励不限</span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <div class="colNav">
+
+                <ul>
+
+                    <li>
+
+                        <a href="/user_center/group"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">微信群管理</p>
+
+                        <a href="/user_center/group?log=1"><p><span class="infoICON inIcon_5"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/group?log=1"><em>0</em></a>条</p>
+
+                    </li>
+
+                    <li>
+
+                        <a href="/user_center/openid"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">公众号管理</p>
+
+                        <a href="/user_center/openid?log=1"><p><span class="infoICON inIcon_7"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/openid?log=1"><em>0</em></a>条</p>
+
+                    </li>
+
+                    <li>
+
+                        <a href="/user_center/personal"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">个人微信号管理</p>
+
+                        <a href="/user_center/personal?log=1"><p><span class="infoICON inIcon_8"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/personal?log=1"><em>0</em></a>条</p>
+
+                    </li>
+
+                    <li>
+
+                        <a href="/user_center/product"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">微商货源管理</p>
+
+                        <a href="/user_center/product?log=1"><p><span class="infoICON inIcon_9"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/product ?log=1"><em>0</em></a>条</p>
+
+                    </li>
+                    <li>
+
+                        <a href="/user_center/sell"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">微信群交易管理</p>
+
+                        <a href="/user_center/sell?log=1"><p><span class="infoICON inIcon_5"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/sell?log=1"><em>0</em></a>条</p>
+
+                    </li>
+
+                    <!--<li>
+
+                        <a href="/user_center/article"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">文章管理</p>
+
+                        <a href="/user_center/article?log=1"><p><span class="infoICON inIcon_10"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/article ?log=1"><em>0</em></a>条</p>
+
+                    </li>
+
+                    <li>
+
+                        <a href="/user_center/joy_pic"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">搞笑图片管理</p>
+
+                        <a href="/user_center/joy_pic?log=1"><p><span class="infoICON inIcon_11"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/joy_pic ?log=1"><em>0</em></a>条</p>
+
+                    </li>
+
+                    <li>
+
+                        <a href="/user_center/joy_txt"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">搞笑段子管理</p>
+
+                        <a href="/user_center/joy_txt?log=1"><p><span class="infoICON inIcon_12"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/joy_txt ?log=1"><em>0</em></a>条</p>
+
+                    </li>-->
+
+                    <li>
+
+                        <a href="/user_center/ads"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                        <p class="colName">发布广告</p>
+
+                        <a href="/user_center/ads"><p><span class="infoICON inIcon_5"></span></p></a>
+
+                        <p class="hisNum">共<a href="/user_center/ads?log=1"><em>0</em></a>条</p>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+            {% endblock center_info %}

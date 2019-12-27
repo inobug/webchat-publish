@@ -75,4 +75,4 @@ def logout(request):
     auth.logout(request)
     return redirect('/index/')
 def user_center(request):
-    return render(request,'center_user.html',locals())
+    return render(request,'user_center/center_info_index.html',locals())

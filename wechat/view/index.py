@@ -6,4 +6,5 @@ from wechat.pro_serializer.user_serializer import CreateUsersRequestSerializer
 
 def index(request):
     print(request.user.username)
-    return render(request,'index.html',{'username':'request.user.username'})
+    print(request.user.pet_name)
+    return render(request,'index.html',locals())
