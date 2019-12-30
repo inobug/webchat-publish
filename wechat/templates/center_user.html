@@ -17,7 +17,7 @@
         <div class="menu">
             <ul class="fl w1200">
                 <li class="active">
-                    <i class="infoICON wxICON_user"> </i><a href="/info/">个人中心</a>
+                    <i class="infoICON wxICON_user"> </i><a href="/user_center/info/">个人中心</a>
                 </li>
                 <li>
                     <a href="/index/">网站首页</a>
@@ -29,11 +29,11 @@
                     <a href="/user_center/user_info/">基本资料</a>
                 </li>
                 <li>
-                    <a href="">会员公告</a>
+                    <a href="/user_center/notice/">会员公告</a>
                 </li>
-                <li class="Release" style="float:right;">
+                <li class="Release" style="float:right;width:115px;">
                     <span class="fl weixinqunICON wxICON_4"> </span>
-                    <a href="/user_center/group">发布微信群</a>
+                    <a href="/user_center/publish_group/">发布微信群</a>
                     <span class="fr weixinqunICON wxICON_5"> </span>
                 </li>
             </ul>
@@ -73,7 +73,7 @@
 
                     <div class="rgstion" style=" text-align:center">
 
-                        <a href="/user_center/info" class="btn_orange" title="签到">返回个人中心</a>
+                        <a href="/user_center/info/" class="btn_orange" title="签到">返回个人中心</a>
 
                     </div>
 
@@ -92,7 +92,7 @@
 
                             <span class="centerICON icon_1"></span>
 
-                            <a href="/user_center/group" class="link">微信群发布
+                            <a href="/user_center/publish_group/" class="link">微信群发布
 
 
                                 <i class="hot centerICON icon_5"></i>
@@ -352,11 +352,11 @@
                         <ul class="clearfix sub_item_ul">
 
 
-                            <li class="sub_item active">
+                            <li class="sub_item">
 
                                 <div class="menu_bg">
 
-                                    <a href="/user_center/info">个人中心
+                                    <a href="/user_center/info/">个人中心
 
 
                                     </a>
@@ -370,7 +370,7 @@
 
                                 <div class="menu_bg">
 
-                                    <a href="/user_center/change_info">修改资料
+                                    <a href="/user_center/user_info/">修改资料
 
 
                                     </a>
@@ -398,7 +398,7 @@
 
                                 <div class="menu_bg">
 
-                                    <a href="/user_center/notice">会员公告
+                                    <a href="/user_center/notice/">会员公告
 
 
                                     </a>
@@ -433,7 +433,7 @@
 
                             <span class="centerICON icon_1"></span>
 
-                            <a href="/user_center/logout" class="link">退出
+                            <a href="/logout/" class="link">退出
 
 
                             </a>
@@ -455,7 +455,7 @@
                 <h4>
                     兑换
                     <span class="fr closeBox" style="cursor:pointer;">
-                <img src="/images/close_02.png" alt="关闭">
+                <img src="/static/images/close_02.png" alt="关闭">
             </span>
                 </h4>
                 <div class="code_box">
@@ -487,7 +487,7 @@
                 <h4>
                     用户余额转账
                     <span class="fr closeBox" style="cursor:pointer;">
-                        <img src="/images/close_02.png" alt="关闭">
+                        <img src="/static/images/close_02.png" alt="关闭">
                     </span>
                 </h4>
                 <div class="code_box">
@@ -697,6 +697,21 @@
               else
                 return null;
             };*/
+        </script>
+        <script>
+            $(".menu_bg a").each(function () {
+                var location = String(window.location).split('user_center')[1]
+                var href = $(this).attr('href').split('user_center')[1]
+
+
+
+                if (href == location) {
+                    console.log(location)
+                    console.log(href)
+                    $(this).parent().parent().addClass("active");
+                }
+            });
+
         </script>
     </div>
 {% endblock center %}

@@ -13,8 +13,10 @@
     <script src="/static/js/jquery.cookie.js" type="text/javascript"></script>
     <script src="/static/js/com.js" type="text/javascript"></script>
     <script src="/static/js/jquery.lazyload.min.js" type="text/javascript"></script>
+
     <script src="/static/js/artDialog.js"></script>
 {% block link %}{% endblock link %}
+{% block style %}{% endblock style %}
 </head>
 <body>
 
@@ -163,7 +165,7 @@
             <div class="fr login" id="user_not_login" style="">
                 {% if request.user.username %}
 
-                    <a href="/info/" style="border-right:1px solid #d2d2d2"
+                    <a href="/user_center/info/" style="border-right:1px solid #d2d2d2"
                        class="user-center top_login diag">个人中心</a>
                     <a href="/logout/" class="user-center top_reg diag">退出</a>
                 {% else %}

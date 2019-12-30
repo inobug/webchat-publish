@@ -1,10 +1,4 @@
-from django.shortcuts import render, HttpResponse, redirect
-from django.http import HttpResponse,JsonResponse
-
-from rest_framework.views import APIView
-from wechat.models import User
-
-china_cirty = {'北京': ['北京'],
+CHINA_CIRTY = {'北京': ['北京'],
                '广东': ['广州', '深圳', '珠海', '汕头', '韶关', '佛山', '江门', '湛江', '茂名', '肇庆', '惠州', '梅州', '汕尾', '河源', '阳江', '清远',
                       '东莞', '中山', '潮州', '揭阳', '云浮'],
                '上海': ['黄浦区', '卢湾区', '徐汇区', '长宁区', '静安区', '普陀区', '闸北区', '虹口区', '杨浦区', '宝山区', '闵行区', '嘉定区', '松江区', '金山区',
@@ -53,20 +47,3 @@ china_cirty = {'北京': ['北京'],
                '台湾': ['台北市', '高雄市', '台北县', '桃园县', '新竹县', '苗栗县', '台中县', '彰化县', '南投县', '云林县', '嘉义县', '台南县', '高雄县', '屏东县',
                       '宜兰县', '花莲县', '台东县', '澎湖县', '基隆市', '新竹市', '台中市', '嘉义市', '台南市']}
 
-
-def get_address(request):
-    if request.method == 'GET':
-        children_list=[]
-        data={}
-        print(request.GET)
-        cirty=request.GET.get('cirty')
-        print(cirty)
-        children_cirty=china_cirty.get(cirty)
-        print(children_cirty)
-        for c in children_cirty:
-            children_list.append({'name':c,'id':c})
-        print(children_list)
-        data['data']=children_list
-        print(data)
-        return JsonResponse(data)
-        # return HttpResponse(children_cirty)

@@ -233,9 +233,9 @@ margin-left: 3px;
 .centerDisArea a.btn_orange{ color:#fff;}
 
 
-.colNav{float:right;width:900px;}
+.colNav{float:left;width:900px;}
 .colNav ul{width:920px;}
-.colNav ul li{position:relative;float:right;width:218px;margin-right:10px;margin-bottom:10px;background-color:#fff;text-align: center;border:2px solid #fff; }
+.colNav ul li{position:relative;float:left;width:218px;margin-right:10px;margin-bottom:10px;background-color:#fff;text-align: center;border:2px solid #fff; }
 .colNav ul li .colName{font-size:18px;line-height: 80px;}
 .colNav ul li .hisNum {line-height: 60px;font-size:20px;}
 .colNav ul li .hisNum em{font-size:32px;margin:0 10px;}

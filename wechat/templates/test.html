@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<form enctype="multipart/form-data" id="uploadForm">
+    <!----用一个label标签将上传文件输入框跟图片绑定一起，
+          点击图片的时候就相当于点击了上传文件的按钮---->
+    <label><img id="avatar-img" src="/static/images/logo.jpg" width="80px" height="80px">
+        <div>头像<input id="avatar-input" hidden type="file"></div>
+    </label>
+
+    <input type='button' onclick='upload()' value='点击上传'>
+</form>
+
+<script src="/static/js/jquery.min.js"></script>
+
+
+<script>
+
+
+    function upload() {
+        var formdata = new FormData();
+        formdata.append("avatar",$("#avatar-input")[0].files[0]);
+        {#var formData = new FormData($("#uploadForm")[0]) ; //创建一个forData#}
+        {#formData.append('img', $('#avatar-img')) ;//把file添加进去  name命名为img#}
+        $.ajax({
+            url: '/test/',
+            data: formdata,
+            type: "POST",
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                //成功
+            },
+            error: function () {
+                //失败
+            }
+        })
+    }
+</script>
+<script>
+
+    // 上传文件按钮（label里的图片）点击事件
+    $('#avatar-input').on('change', function () {
+        // 获取用户最后一次选择的图片
+        var choose_file = $(this)[0].files[0];
+        // 创建一个新的FileReader对象，用来读取文件信息
+        var reader = new FileReader();
+        // 读取用户上传的图片的路径
+        reader.readAsDataURL(choose_file);
+        // 读取完毕之后，将图片的src属性修改成用户上传的图片的本地路径
+        reader.onload = function () {
+            $("#avatar-img").attr("src", reader.result)
+        }
+    });
+
+</script>

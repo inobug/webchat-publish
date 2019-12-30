@@ -25,9 +25,8 @@ SECRET_KEY = '*7vc^ww0(8=#-m7gzhr!_g&4sic_qg5^67u09(!r+t6u0t&m45'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
-AUTH_USER_MODEL = 'wechat.User'
 
 # Application definition
 
@@ -40,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'wechat',
 ]
+AUTH_USER_MODEL = 'wechat.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -124,4 +124,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
-print(STATICFILES_DIRS)
+
+# 媒体文件地址
+MEDIA_URL = '/avatars/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'avatars/')

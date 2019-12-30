@@ -210,7 +210,7 @@ padding: 3px 5px;}.top .msg h1 a:hover{background:#ff3265;color:#fff;}
 .nav .menu li:hover i{border-color: #fff transparent transparent;}
 .nav .menu li.active{background:#ff3265; color:#fff; height:38px;}
 
-.nav .menu li.Release{ position:relative;background:#ff3265; height:41px; line-height:41px;font-size:14px; width:104px; top:-3px; margin-left:20px; text-align:center;}
+.nav .menu li.Release{ position:relative;background:#ff3265; height:41px; line-height:41px;font-size:14px; width:115px; top:-3px; margin-left:20px; text-align:center;}
 .nav .menu li.Release .fl,.nav .menu li.Release .fr{ position:absolute;}
 .nav .menu li.Release .fl{ left:-3px;}
 .nav .menu li.Release .fr{ right:-3px;}

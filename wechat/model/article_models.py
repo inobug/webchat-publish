@@ -4,7 +4,7 @@ from wechat.models import User
 
 class Category(models.Model):
     """
-    博主个人文章分类表
+    标题表
     """
     nid = models.AutoField(primary_key=True)
     title = models.CharField(verbose_name='分类标题', max_length=32)
@@ -13,7 +13,12 @@ class Category(models.Model):
 
     def __str__(self):
         return self.title
-
+class Type(models.Model):
+    """
+      分类表
+      """
+    nid = models.AutoField(primary_key=True)
+    title = models.CharField(verbose_name='分类标题', max_length=32)
 
 class Tag(models.Model):
     # 标签信息表
